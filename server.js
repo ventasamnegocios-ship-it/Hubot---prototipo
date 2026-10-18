@@ -132,15 +132,14 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "public"), {
-  etag: true,
-  maxAge: "1h",
-  setHeaders(res) { res.setHeader("X-Content-Type-Options", "nosniff"); }
-}));
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
-app.listen(PORT, () => {
-  console.log(`HUBot prototype listening on port ${PORT}`);
-  if (!process.env.OPENAI_API_KEY) console.log("Set OPENAI_API_KEY to enable AI responses.");
+
+app.get("/styles.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "styles.css"));
+});
+
+app.get("/app.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "app.js"));
 });
