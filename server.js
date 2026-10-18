@@ -137,7 +137,9 @@ app.use(express.static(path.join(__dirname, "public"), {
   maxAge: "1h",
   setHeaders(res) { res.setHeader("X-Content-Type-Options", "nosniff"); }
 }));
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.listen(PORT, () => {
   console.log(`HUBot prototype listening on port ${PORT}`);
   if (!process.env.OPENAI_API_KEY) console.log("Set OPENAI_API_KEY to enable AI responses.");
