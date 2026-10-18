@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243f">
+  <meta name="description" content="Prototipo de HUBot, asesor virtual del HUB Dominicano de Compradores, Proveedores & Abastecimiento.">
+  <title>HUBot | Asesor virtual del HUB</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">H<span>•</span></div>
+        <div><div class="brand-name">HUB<span>ot</span></div><div class="brand-caption">Asesor virtual del HUB</div></div>
+      </div>
+      <div class="side-label">ÁREAS DE ESPECIALIDAD</div>
+      <button class="topic" data-prompt="Oriéntame sobre cómo estructurar un proceso de compras profesional."><span>↗</span> Compras y contrataciones</button>
+      <button class="topic" data-prompt="Ayúdame a diseñar un proceso de evaluación y seguimiento de proveedores."><span>◇</span> Gestión de proveedores</button>
+      <button class="topic" data-prompt="Explícame los pasos y riesgos que debo revisar en una importación."><span>◎</span> Negocios internacionales</button>
+      <button class="topic" data-prompt="Ayúdame a mejorar un proceso de abastecimiento e inventario."><span>▤</span> Abastecimiento y logística</button>
+      <button class="topic" data-prompt="Ayúdame a crear un procedimiento operativo estándar con objetivo, alcance, responsables, pasos, controles e indicadores."><span>☷</span> Diseño de procesos</button>
+      <div class="sidebar-bottom">
+        <div class="pilot-pill"><span></span> MODO DE PRUEBA</div>
+        <p>Prototipo en validación. Verifica los requisitos legales y las decisiones críticas con fuentes oficiales y especialistas.</p>
+        <div class="powered">Compras con ética, visión y propósito.</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark small">H<span>•</span></div><strong>HUBot</strong></div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Asesor especializado</span><span class="top-tag">PILOTO</span></div>
+      </header>
+
+      <section class="chat-layout">
+        <div id="welcome" class="welcome">
+          <div class="hero-icon" aria-hidden="true"><span>H</span><i></i></div>
+          <div class="eyebrow">HUB DOMINICANO DE COMPRADORES, PROVEEDORES & ABASTECIMIENTO</div>
+          <h1>Hola, soy <span>HUBot.</span></h1>
+          <p class="intro">Tu aliado para analizar, resolver y mejorar procesos de compras, proveedores y abastecimiento.</p>
+          <div class="welcome-rule"></div>
+          <p class="question-label">¿En qué puedo orientarte hoy?</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Necesito crear un procedimiento para seleccionar y evaluar proveedores."><span>↗</span><b>Crear un proceso</b><small>Diseña pasos, responsables y controles.</small></button>
+            <button class="suggestion" data-prompt="Quiero comparar varias cotizaciones. ¿Qué información necesitas y cómo recomiendas evaluarlas?"><span>⇄</span><b>Comparar proveedores</b><small>Evalúa precio, calidad, riesgo y entrega.</small></button>
+            <button class="suggestion" data-prompt="Voy a importar un producto. Ayúdame a identificar la información que necesito y los riesgos que debo revisar."><span>◎</span><b>Preparar una importación</b><small>Organiza requisitos y próximos pasos.</small></button>
+            <button class="suggestion" data-prompt="Ayúdame a identificar indicadores clave para medir el desempeño de compras y proveedores."><span>▥</span><b>Mejorar resultados</b><small>Define indicadores y oportunidades.</small></button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages" aria-live="polite" aria-label="Conversación con HUBot" hidden></div>
+
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message">Escribe tu consulta</label>
+          <textarea id="message" rows="1" maxlength="4000" placeholder="Pregúntale a HUBot sobre compras, proveedores o logística…" required></textarea>
+          <div class="composer-footer">
+            <span>HUBot puede equivocarse. Verifica decisiones críticas.</span>
+            <button id="send" type="submit"><span>Enviar</span><b aria-hidden="true">↑</b></button>
+          </div>
+        </form>
+        <div id="error" class="error" role="alert" hidden></div>
+        <div class="disclaimer">Prototipo de prueba · No compartas datos personales sensibles ni información confidencial de tu empresa.</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
