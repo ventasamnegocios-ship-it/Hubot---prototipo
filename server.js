@@ -143,3 +143,6 @@ app.get("/styles.css", (req, res) => {
 app.get("/app.js", (req, res) => {
   res.sendFile(path.join(__dirname, "app.js"));
 });
+app.listen(PORT, () => {
+  console.log(`HUBot escuchando en el puerto ${PORT}`);
+});
